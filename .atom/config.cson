@@ -1,0 +1,212 @@
+"*":
+  "advanced-open-file":
+    createDirectories: true
+    createFileInstantly: true
+    helmDirSwitch: true
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+      formatOnType: false
+    hyperclick: {}
+  "autocomplete-modules":
+    babelPluginModuleResolver: true
+  "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
+    defaultProvider: "Fuzzy"
+    enableAutoConfirmSingleSuggestion: false
+    minimumWordLength: 2
+    useLocalityBonus: false
+  autosave:
+    enabled: true
+  core:
+    automaticallyUpdate: false
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "language-c"
+      "language-clojure"
+      "language-csharp"
+      "language-java"
+      "language-mustache"
+      "language-objective-c"
+      "language-perl"
+      "language-php"
+      "language-python"
+      "language-xml"
+      "linter"
+      "nuclide"
+      "ide-typescript"
+    ]
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "desktop.ini"
+      "node_modules"
+    ]
+    packagesWithKeymapsDisabled: [
+      "tool-bar"
+      "zentabs"
+      "maximize-panes"
+      "color-picker"
+      "todo-show"
+      "git-blame"
+      "git-plus"
+      "highlight-selected"
+    ]
+    telemetryConsent: "limited"
+    themes: [
+      "nord-atom-ui"
+      "nord-atom-syntax"
+    ]
+    titleBar: "hidden"
+  "custom-title":
+    template: "atom/<%= projectName %>"
+  editor:
+    invisibles:
+      eol: " "
+      space: " "
+    preferredLineLength: 100
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "b3826635-46e0-4095-8b86-6dd549281bbe"
+  "file-icons":
+    coloured: false
+  "find-and-replace":
+    projectSearchResultsPaneSplitDirection: "right"
+  "flex-tool-bar": {}
+  "git-blame":
+    columnWidth: 350
+    showOnlyLastNames: false
+  "git-diff": {}
+  "git-plus":
+    diffs:
+      syntaxHighlighting: false
+    general:
+      analytics: false
+      splitPane: "Right"
+  "highlight-selected": {}
+  linter:
+    displayLinterInfo: false
+    displayLinterStatus: false
+    showErrorTabFile: false
+    showErrorTabProject: false
+    statusIconScope: "File"
+  "linter-eslint": {}
+  "linter-scss-lint":
+    disableWhenNoConfigFileInPath: true
+  "linter-ui-default": {}
+  "markdown-preview":
+    useGitHubStyle: true
+  "nice-index":
+    fileNames: [
+      "index\\.|styles\\.s?css"
+    ]
+  "nord-atom-ui": {}
+  nuclide:
+    "atom-ide-code-format":
+      formatOnSave: true
+      formatOnType: false
+    "atom-ide-datatip":
+      datatipDebounceDelay: 400
+    "atom-ide-diagnostics-ui": {}
+    "nuclide-code-format": {}
+    "nuclide-diagnostics-ui": {}
+    "nuclide-flow":
+      canUseFlowBin: true
+      enablePushDiagnostics: true
+      enableStructuredTypeHints: true
+      flowAutocompleteResultsFirst: false
+      functionSnippetShouldIncludeArguments: false
+    "nuclide-health":
+      toolbarJewel: "None"
+    use:
+      "nuclide-adb-logcat": false
+      "nuclide-adb-sdb": false
+      "nuclide-arc-lint": false
+      "nuclide-arcanist": false
+      "nuclide-blame": false
+      "nuclide-blame-provider-hg": false
+      "nuclide-bookshelf": false
+      "nuclide-buck": false
+      "nuclide-buck-ios": false
+      "nuclide-clang": false
+      "nuclide-clipboard-path": false
+      "nuclide-console": false
+      "nuclide-debugger": false
+      "nuclide-debugger-native": false
+      "nuclide-debugger-php": false
+      "nuclide-device-panel": false
+      "nuclide-distraction-free-mode": false
+      "nuclide-file-tree": false
+      "nuclide-hack": false
+      "nuclide-health": false
+      "nuclide-hg-repository": false
+      "nuclide-home": false
+      "nuclide-http-request-sender": false
+      "nuclide-language-hack": false
+      "nuclide-objc": false
+      "nuclide-python": false
+      "nuclide-quick-open": false
+      "nuclide-remote-atom": false
+      "nuclide-remote-projects": false
+      "nuclide-settings": false
+      "nuclide-ssh-tunnel": false
+      "nuclide-vcs-log": false
+      "nuclide-working-sets": false
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+      isDisabledIfNoConfigFile: true
+      isDisabledIfNotInPackageJson: true
+    prettierEslintOptions: {}
+    prettierOptions:
+      trailingComma: "all"
+    silenceErrors: true
+  tabs:
+    enableVcsColoring: true
+  "todo-show":
+    findTheseTodos: [
+      "XXX"
+      "TODO"
+      "FIXME"
+      "CHANGED"
+      "IDEA"
+      "HACK"
+      "NOTE"
+      "REVIEW"
+      "NB"
+      "BUG"
+      "QUESTION"
+      "COMBAK"
+      "TEMP"
+    ]
+    ignoreThesePaths: [
+      "node_modules"
+      "vendor"
+      "bower_components"
+      "flow-typed"
+    ]
+    sortBy: "Type"
+  "tool-bar":
+    position: "Left"
+  "tree-view":
+    alwaysOpenExisting: true
+  welcome:
+    showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnCurrentLine: false

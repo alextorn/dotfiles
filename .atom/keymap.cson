@@ -1,0 +1,143 @@
+# Your keymap
+#
+# Atom keymaps work similarly to style sheets. Just as style sheets use
+# selectors to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts. Unlike style sheets however,
+# each selector can only be declared once.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+# Here's an example taken from Atom's built-in keymap:
+#
+# 'atom-text-editor':
+#   'enter': 'editor:newline'
+#
+# 'atom-workspace':
+#   'ctrl-shift-p': 'core:move-up'
+#   'ctrl-p': 'core:move-down'
+#
+# You can find more information about keymaps in these guides:
+# * http://flight-manual.atom.io/using-atom/sections/basic-customization/#_customizing_keybindings
+# * http://flight-manual.atom.io/behind-atom/sections/keymaps-in-depth/
+#
+# If you're having trouble with your keybindings not working, try the
+# Keybinding Resolver: `Cmd+.` on macOS and `Ctrl+.` on other platforms. See the
+# Debugging Guide for more information:
+# * http://flight-manual.atom.io/hacking-atom/sections/debugging/#check-the-keybindings
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+'body':
+  'f5': 'window:toggle-full-screen'
+  'cmd-, c': 'settings-view:core'
+  'cmd-, e': 'settings-view:editor'
+  'cmd-, k': 'settings-view:show-keybindings'
+  'cmd-, p': 'settings-view:uninstall-packages'
+  'cmd-, t': 'settings-view:uninstall-themes'
+  'cmd-, u': 'settings-view:check-for-package-updates'
+  'cmd-, i': 'settings-view:install-packages-and-themes'
+
+'.platform-darwin':
+  'ctrl-cmd-f': 'tree-view:toggle'
+  'cmd-\\': 'tree-view:toggle-focus'
+
+  'cmd-r': 'fuzzy-finder:toggle-buffer-finder'
+  'cmd-t': 'fuzzy-finder:toggle-file-finder'
+
+  'ctrl-cmd-/': 'diagnostics:toggle-table'
+  'ctrl-cmd-.': 'golang:toggle-panel'
+
+  'ctrl-cmd-b': 'git-blame:toggle'
+
+'.workspace':
+  'ctrl-cmd-g': 'github:toggle-git-tab'
+  'ctrl-cmd-h': 'github:toggle-github-tab'
+  'ctrl-cmd-o': 'outline-view:toggle'
+
+'.platform-darwin atom-workspace':
+  'cmd-o': 'advanced-open-file:toggle'
+
+  'ctrl-cmd-t': 'todo-show:find-in-project'
+  'ctrl-cmd-c': 'color-picker:open'
+  'ctrl-cmd-m': 'markdown-preview:toggle'
+
+'.fuzzy-finder':
+  'cmd-enter': 'pane:split-right'
+  'cmd-shift-enter': 'pane:split-down'
+
+'.platform-darwin .tree-view':
+  'cmd-enter': 'tree-view:open-selected-entry-right'
+  'cmd-shift-enter': 'tree-view:open-selected-entry-down'
+  's': 'tree-view:open-selected-entry-right'
+  'i': 'tree-view:open-selected-entry-down'
+  'r': 'tree-view:rename'
+  'd': 'tree-view:remove'
+  'c': 'tree-view:duplicate'
+
+'.platform-darwin atom-text-editor':
+  'ctrl-f2': 'unset!'
+  'cmd-r': 'unset!'
+  'cmd-g': 'unset!'
+  'ctrl-cmd-g': 'unset!'
+  'ctrl-cmd-m': 'unset!'
+  'ctrl-alt-f': 'unset!'
+
+  'ctrl-alt-q': 'pane:close'
+  'ctrl-alt-w': 'pane:close-other-items'
+
+  'ctrl-cmd-p': 'command-palette:toggle'
+  'ctrl-cmd-l': 'grammar-selector:show'
+
+  'cmd-shift-a': 'find-and-replace:select-all'
+  'cmd-shift-b': 'bracket-matcher:select-inside-brackets'
+
+'atom-workspace atom-text-editor:not([mini])':
+  'ctrl-cmd-enter': 'maximize-panes:maximize'
+
+  'ctrl-cmd-up': 'window:focus-pane-above'
+  'ctrl-cmd-right': 'window:focus-pane-on-right'
+  'ctrl-cmd-down': 'window:focus-pane-below'
+  'ctrl-cmd-left': 'window:focus-pane-on-left'
+
+  'ctrl-alt-right': 'pane:split-right-and-move-active-item'
+  'ctrl-alt-left': 'pane:split-left-and-move-active-item'
+  'ctrl-alt-up': 'pane:split-up-and-move-active-item'
+  'ctrl-alt-down': 'pane:split-down-and-move-active-item'
+
+  'ctrl-shift-alt-right': 'window:move-active-item-to-pane-on-right'
+  'ctrl-shift-alt-left': 'window:move-active-item-to-pane-on-left'
+  'ctrl-shift-alt-up': 'window:move-active-item-to-pane-above'
+  'ctrl-shift-alt-down': 'window:move-active-item-to-pane-below'
+
+  'ctrl-.': 'cursor-history:next'
+  'ctrl-,': 'cursor-history:prev'
+
+  'cmd-l s': 'set-syntax:Shell Script'
+  'cmd-l j': 'set-syntax:Babel ES6 JavaScript'
+  'cmd-l d': 'set-syntax:Dockerfile'
+
+  'cmd-d': 'editor:duplicate-lines'
+  'shift-up': 'vim-mode-plus:scroll-half-screen-up'
+  'shift-down': 'vim-mode-plus:scroll-half-screen-down'
+  'ctrl-up': 'editor:add-selection-above'
+  'ctrl-down': 'editor:add-selection-below'
+  'shift-alt-up': 'editor:move-line-up'
+  'shift-alt-down': 'editor:move-line-down'
+
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  '=': 'editor:newline-below'
+  '+': 'editor:newline-above'
+  '\\': 'tree-view:reveal-active-file'
+  ', w': 'core:save'
+
+'.advanced-open-file atom-text-editor':
+  'cmd-enter': 'pane:split-right'
+  'cmd-shift-enter': 'pane:split-down'
+
+'atom-text-editor[data-grammar~="go"]:not([mini])':
+  'alt-u': 'golang:find-usage'
+  'alt-i': 'golang:implements'
+  'alt-r': 'golang:gorename'

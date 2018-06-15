@@ -1,0 +1,753 @@
+# Your snippets
+#
+# Atom snippets allow you to enter a simple prefix in the editor and hit tab to
+# expand the prefix into a larger code block with templated values.
+#
+# You can create a new snippet in this file by typing "snip" and then hitting
+# tab.
+#
+# An example CoffeeScript snippet to expand log to console.log:
+#
+# '.source.coffee':
+#   'Console log':
+#     'prefix': 'log'
+#     'body': 'console.log $1'
+#
+# Each scope (e.g. '.source.coffee' above) can only be declared once.
+#
+# This file uses CoffeeScript Object Notation (CSON).
+# If you are unfamiliar with CSON, you can read more about it in the
+# Atom Flight Manual:
+# http://flight-manual.atom.io/using-atom/sections/basic-customization/#_cson
+
+# ======= JavaScript
+
+'.source.js':
+	'console.log':
+    'prefix': 'l'
+    'body': 'console.log(${0});'
+
+  'console.log.return':
+    'prefix': 'lor'
+    'body': 'console.log(${0}) ||'
+
+  'console.log.jsx':
+    'prefix': 'ljsx'
+    'body': '{console.log(${0})}'
+
+  'console.log.destructured':
+    'prefix': 'ld'
+    'body': 'console.log({ ${0} });'
+
+  'console.log.destructured.return':
+    'prefix': 'ldor'
+    'body': 'console.log({ ${0} }) ||'
+
+  'console.log.destructured.jsx':
+    'prefix': 'ldor'
+    'body': '{console.log({ ${0} })}'
+
+  'debugger':
+    'prefix': 'dbg'
+    'body': 'debugger'
+
+  'const':
+    'prefix': 'c'
+    'body': 'const ${1:name} = ${0:value};'
+
+  'const.destructuring':
+    'prefix': 'cd'
+    'body': 'const { ${0:prop} } = ${1:obj};'
+
+  'typeof':
+    'prefix': 'to'
+    'body': 'typeof '
+
+  'import.default':
+    'prefix': 'i'
+    'body': 'import ${0:module} from \'${1:location}\';'
+
+  'import.named':
+    'prefix': 'in'
+    'body': 'import { ${0:NamedExport} } from \'${1:location}\';'
+
+  'import.all':
+    'prefix': 'ia'
+    'body': 'import * as ${0:module} from \'${1:location}\';'
+
+  'import.type':
+    'prefix': 'it'
+    'body': 'import { type ${0:Type} } from \'${1:location}\';'
+
+  'import.typeof':
+    'prefix': 'ito'
+    'body': 'import { typeof ${2:thing} as ${0:TypeAlias} } from \'${1:location}\';'
+
+  'import.react':
+    'prefix': 'ir'
+    'body': 'import * as React from \'react\';'
+
+  'import.immutable':
+    'prefix': 'ii'
+    'body': 'import { ${0} } from \'immutable\';'
+
+  'import.immutable.Record':
+    'prefix': 'iir'
+    'body': 'import { Record, type RecordOf, type RecordFactory } from \'immutable\';'
+
+  'import.immutable.Map':
+    'prefix': 'iim'
+    'body': 'import { Map } from \'immutable\';'
+
+  'import.immutable.List':
+    'prefix': 'iil'
+    'body': 'import { List } from \'immutable\';'
+
+  'import.immutable.Set':
+    'prefix': 'iis'
+    'body': 'import { Set } from \'immutable\';'
+
+  'import.immutable.OrderedSet':
+    'prefix': 'iios'
+    'body': 'import { OrderedSet } from \'immutable\';'
+
+  'import.lodash':
+    'prefix': 'il'
+    'body': 'import _ from \'lodash/fp\';'
+
+  'import.classnames':
+    'prefix': 'icn'
+    'body': 'import cn from \'classnames\';'
+
+  'import.api':
+    'prefix': 'iapi'
+    'body': 'import api from \'api\';'
+
+  'import.libs':
+    'prefix': 'ilibs'
+    'body': 'import { ${0:lib} } from \'libs/${1}\';'
+
+  'import.models':
+    'prefix': 'imodels'
+    'body': 'import { ${0:Model} } from \'models/${1}\';'
+
+  'import.routes':
+    'prefix': 'iroutes'
+    'body': 'import * as routes from \'routes\';'
+
+  'import.components':
+    'prefix': 'isc'
+    'body': 'import { ${0:Component} } from \'styleguide/components\';'
+
+  'import.forms':
+    'prefix': 'isf'
+    'body': 'import { ${0:Form} } from \'styleguide/forms\';'
+
+  'import.icons':
+    'prefix': 'isi'
+    'body': 'import * as Icons from \'styleguide/icons\';'
+
+  'import.types':
+    'prefix': 'itypes'
+    'body': 'import type { ${0:Type} } from \'types/${1}\';'
+
+  'import.css':
+    'prefix': 'icss'
+    'body': 'import css from \'.${0:ComponentStyles.css}\';'
+
+  'export.named':
+    'prefix': 'en'
+    'body': 'export { ${0:module} } from \'${1:location}\';'
+
+  'export.default':
+    'prefix': 'ed'
+    'body': 'export default ${0};'
+
+  'export.default.function':
+    'prefix': 'edf'
+    'body': """
+      export default function ${1:myFunction}(${2:...args}) {
+        ${0}
+      }
+    """
+
+  'export.const':
+    'prefix': 'ec'
+    'body': 'export const ${1:name} = ${0:value};'
+
+  'export.function':
+    'prefix': 'ef'
+    'body': """
+      export function ${1:myFunction}(${2:...args}) {
+        ${0}
+      }
+    """
+
+  'export.type':
+    'prefix': 'et'
+    'body': 'export type ${1:name} = ${0:value};'
+
+  'export.exact.type':
+    'prefix': 'eet'
+    'body': """
+      export type ${1:name} = {|
+        ${0}
+      |};
+    """
+
+  'require':
+    'prefix': 'r'
+    'body': 'const ${1:module} = require(\'${0:location}\');'
+
+  'try.catch':
+    'prefix': 'trc'
+    'body': """
+      try {
+        ${1:expression}
+      } catch (error) {
+        ${0:// handle error...}
+      }
+    """
+
+  'event':
+    'prefix': 'e'
+    'body': 'event'
+
+  'event.target.name.value':
+    'prefix': 'etnv'
+    'body': 'const { name, value } = event.target;'
+
+  'event.target.name':
+    'prefix': 'etn'
+    'body': 'event.target.name'
+
+  'event.target.value':
+    'prefix': 'etv'
+    'body': 'event.target.value'
+
+  'props':
+    'prefix': 'p'
+    'body': 'props'
+
+  'this.props':
+    'prefix': 'tp'
+    'body': 'this.props'
+
+  'const.this.props':
+    'prefix': 'ctp'
+    'body': 'const { ${0} } = this.props;'
+
+  'this.state':
+    'prefix': 'ts'
+    'body': 'this.state'
+
+  'const.this.state':
+    'prefix': 'cts'
+    'body': 'const { ${0} } = this.state;'
+
+  'this.context':
+    'prefix': 'tc'
+    'body': 'this.context'
+
+  'const.this.context':
+    'prefix': 'ctc'
+    'body': 'const { ${0} } = this.context;'
+
+  'this.setState':
+    'prefix': 'tss'
+    'body': 'this.setState({${1}});'
+
+  'constructor':
+    'prefix': 'cnstr'
+    'body': """
+      constructor(...args: Array<*>) {
+        super(...args);
+        ${0}
+      }
+    """
+
+  'constructor.props':
+    'prefix': 'cnstrp'
+    'body': """
+      constructor(props: Props, ...rest: Array<*>) {
+        super(props, ...rest);
+        ${0}
+      }
+    """
+
+  'React.componentWillMount':
+    'prefix': 'rcwm'
+    'body': """
+      componentWillMount = () => {
+        ${0:// use it to do something on a server...}
+      };
+    """
+
+  'React.componentDidMount':
+    'prefix': 'rcdm'
+    'body': """
+      componentDidMount = () => {
+        ${0:// use it to do something w/ DOM on instantiation or for data fetching...}
+      };
+    """
+
+  'React.componentWillReceiveProps':
+    'prefix': 'rcwrp'
+    'body': """
+      componentWillReceiveProps = (nextProps: Props) => {
+        ${0:// use it to update state or anything in response to next props...}
+      };
+    """
+
+  'React.componentWillUpdate':
+    'prefix': 'rcwup'
+    'body': """
+      componentWillUpdate = (nextProps: Props, nextState: State) => {
+        ${0:// use it to do something before an update...}
+      };
+    """
+
+  'React.componentDidUpdate':
+    'prefix': 'rcdu'
+    'body': """
+      componentDidUpdate = (prevProps: Props, prevState: State) => {
+        ${0:// use it to do something w/ the DOM after update...}
+      };
+    """
+
+  'React.componentWillUnmount':
+    'prefix': 'rcwun'
+    'body': """
+      componentWillUnmount = () => {
+        ${0:// use it to perform any necessary cleanups...}
+      };
+    """
+
+  'React.Component':
+    'prefix': 'rc'
+    'body': """
+      /* @flow */
+      import * as React from 'react';
+      type Props = {|
+      |};
+      export default class ${1:Component} extends React.Component<Props> {
+        render = () => (
+          // jsx...
+        );
+      }
+    """
+
+  'React.Component.withState':
+    'prefix': 'rcs'
+    'body': """
+      /* @flow */
+      import * as React from 'react';
+      type Props = {|
+      |};
+      type State = {|
+      |};
+      export default class ${1:Component} extends React.Component<Props, State> {
+        state = {};
+        render = () => (
+          ${0}
+        );
+      }
+    """
+
+  'React.SFC':
+    'prefix': 'rsfc'
+    'body': """
+      /* @flow */
+      import * as React from 'react';
+      type Props = {|
+      |};
+      const ${1:Component} = ({}: Props) => (
+        ${0}
+      );
+      export default ${1:Component};
+    """
+
+  'React.HOC':
+    'prefix': 'rhoc'
+    'body': """
+      /* @flow */
+      import * as React from 'react';
+      type Props = {|
+      |};
+      type State = {|
+      |};
+      type ChildProps = {
+        ...Props,
+        ...State,
+        ...Handlers,
+      };
+      const ${1:withHOC} = (${2:Child}: React.ComponentType<ChildProps>) =>
+        class extends React.Component<Props> {
+          render = () => (
+            <${2:Child} />
+          );
+        };
+      export default ${1:withHOC};
+    """
+
+  'React.children':
+    'prefix': 'ch'
+    'body': 'children'
+
+  'React.this.props.children':
+    'prefix': 'tpch'
+    'body': 'this.props.children'
+
+  'React.className':
+    'prefix': 'cn'
+    'body': 'className'
+
+  'JSX.className.css':
+    'prefix': 'cncss'
+    'body': 'className={css.${0}}'
+
+  'JSX.div.className.css':
+    'prefix': 'dcncss'
+    'body': """
+      <div className={css.${1}}>
+        ${0}
+      </div>
+    """
+
+  'JSX.onClick':
+    'prefix': 'ocl'
+    'body': 'onClick={${0}}'
+
+  'JSX.onChange':
+    'prefix': 'och'
+    'body': 'onChange={${0}}'
+
+  'Eslint.disable':
+    'prefix': 'esld'
+    'body': '/* eslint-disable ${1:rule} */'
+
+  'Eslint.enable':
+    'prefix': 'esle'
+    'body': '/* eslint-enable ${1:rule} */'
+
+  'Eslint.disable-line':
+    'prefix': 'esldl'
+    'body': '// eslint-disable-line ${1:rule}'
+
+  'Eslint.disable-next-line':
+    'prefix': 'esldnl'
+    'body': '// eslint-disable-next-line ${1:rule}'
+
+  'PropTypes.shape':
+    'prefix': 'ptsh'
+    'body': """
+      PropTypes.shape({
+        ${1:property}: ${0}
+      }),
+    """
+
+  'PropTypes.shape.isRequired':
+    'prefix': 'ptshr'
+    'body': """
+      PropTypes.shape({
+        ${1:property}: pt${0}
+      }).isRequired,
+    """
+
+  'PropTypes.bool':
+    'prefix': 'ptb'
+    'body': 'PropTypes.bool,'
+
+  'PropTypes.bool.isRequired':
+    'prefix': 'ptbr'
+    'body': 'PropTypes.bool.isRequired,'
+
+  'PropTypes.string':
+    'prefix': 'pts'
+    'body': 'PropTypes.string,'
+
+  'PropTypes.string.isRequired':
+    'prefix': 'ptsr'
+    'body': 'PropTypes.string.isRequired,'
+
+  'PropTypes.number':
+    'prefix': 'ptn'
+    'body': 'PropTypes.number,'
+
+  'PropTypes.number.isRequired':
+    'prefix': 'ptnr'
+    'body': 'PropTypes.number.isRequired,'
+
+  'PropTypes.array':
+    'prefix': 'pta'
+    'body': 'PropTypes.array,'
+
+  'PropTypes.array.isRequired':
+    'prefix': 'ptar'
+    'body': 'PropTypes.array.isRequired,'
+
+  'PropTypes.object':
+    'prefix': 'pto'
+    'body': 'PropTypes.object,'
+
+  'PropTypes.object.isRequired':
+    'prefix': 'ptor'
+    'body': 'PropTypes.object.isRequired,'
+
+  'PropTypes.func':
+    'prefix': 'ptf'
+    'body': 'PropTypes.func,'
+
+  'PropTypes.func.isRequired':
+    'prefix': 'ptfr'
+    'body': 'PropTypes.func.isRequired,'
+
+  'PropTypes.instanceOf':
+    'prefix': 'pti'
+    'body': 'PropTypes.instanceOf(${0}),'
+
+  'PropTypes.instanceOf.isRequired':
+    'prefix': 'ptir'
+    'body': 'PropTypes.instanceOf(${0}).isRequired,'
+
+  'PropTypes.oneOf':
+    'prefix': 'ptoo'
+    'body': 'PropTypes.oneOf([${0}]),'
+
+  'PropTypes.oneOf.isRequired':
+    'prefix': 'ptoor'
+    'body': 'PropTypes.oneOf([${0}]).isRequired,'
+
+  'PropTypes.oneOfType':
+    'prefix': 'ptoot'
+    'body': 'PropTypes.oneOfType([pt${0}]),'
+
+  'PropTypes.oneOfType.isRequired':
+    'prefix': 'ptootr'
+    'body': 'PropTypes.oneOfType([pt${0}]).isRequired,'
+
+  'PropTypes.arrayOf':
+    'prefix': 'ptao'
+    'body': 'PropTypes.arrayOf(pt${0}),'
+
+  'PropTypes.arrayOf.isRequired':
+    'prefix': 'ptaor'
+    'body': 'PropTypes.arrayOf(pt${0}).isRequired,'
+
+  'PropTypes.any':
+    'prefix': 'ptany'
+    'body': 'PropTypes.any,'
+
+  'PropTypes.any.isRequired':
+    'prefix': 'ptanyr'
+    'body': 'PropTypes.any.isRequired,'
+
+  'JSDoc':
+    'prefix': '@@'
+    'body': """
+      /**
+       * @desc ${1:Method description}
+       *
+       */
+    """
+
+  'Flex':
+    'prefix': 'fx'
+    'body': """
+      <Flex ${1}>
+        ${0}
+      </Flex>
+    """
+
+  'Flex.flow.row-wrap':
+    'prefix': 'ffrw'
+    'body': 'flow="row-wrap"'
+
+  'Flex.flow.row-nowrap':
+    'prefix': 'ffrnw'
+    'body': 'flow="row-nowrap"'
+
+  'Flex.flow.column-wrap':
+    'prefix': 'ffcw'
+    'body': 'flow="column-wrap"'
+
+  'Flex.flow.column-nowrap':
+    'prefix': 'ffcnw'
+    'body': 'flow="column-nowrap"'
+
+  'Flex.alignItems.flex-start':
+    'prefix': 'aifs'
+    'body': 'alignItems="flex-start"'
+
+  'Flex.alignItems.flex-end':
+    'prefix': 'aife'
+    'body': 'alignItems="flex-end"'
+
+  'Flex.alignItems.center':
+    'prefix': 'aic'
+    'body': 'alignItems="center"'
+
+  'Flex.alignItems.baseline':
+    'prefix': 'aib'
+    'body': 'alignItems="baseline"'
+
+  'Flex.alignItems.stretch':
+    'prefix': 'ais'
+    'body': 'alignItems="stretch"'
+
+  'Flex.justifyContent.flex-start':
+    'prefix': 'jcfs'
+    'body': 'justifyContent="flex-start"'
+
+  'Flex.justifyContent.flex-end':
+    'prefix': 'jcfe'
+    'body': 'justifyContent="flex-end"'
+
+  'Flex.justifyContent.center':
+    'prefix': 'jcc'
+    'body': 'justifyContent="center"'
+
+  'Flex.justifyContent.space-between':
+    'prefix': 'jcsb'
+    'body': 'justifyContent="space-between"'
+
+  'Flex.justifyContent.space-around':
+    'prefix': 'jcsa'
+    'body': 'justifyContent="space-around"'
+
+  'Flex.justifyContent.space-evenly':
+    'prefix': 'jcse'
+    'body': 'justifyContent="space-evenly"'
+
+# ======= React Native
+	'React Native Component File':
+    'prefix': 'rnc'
+    'body': '''/* @flow weak */
+      import React, { Component } from 'react';
+      import {
+        View,
+        Text,
+        StyleSheet,
+      } from 'react-native';
+      export default class ${1:MyComponent} extends Component {
+        render() {
+          return (
+            ${2:<View style={styles.container\\}>
+              ${3:<Text>${4:I'm the ${1:MyComponent} component}</Text>}
+            </View>}
+          );$5
+        }
+      }
+      const styles = StyleSheet.create({
+        container: {
+          flex: 1,
+        },
+      });
+      '''
+
+	'React Native Pure Component File':
+    'prefix': 'rnp'
+    'body': '''/* @flow weak */
+      import React from 'react';
+      import {
+        View,
+        Text,
+        StyleSheet,
+      } from 'react-native';
+      const ${1:MyComponent} = ({$2}) => (
+        ${3:<View style={styles.container\\}>
+          ${4:<Text>${5:I'm ${1:MyComponent}}</Text>}
+        </View>}
+      );$6
+      export default ${1:MyComponent};
+      const styles = StyleSheet.create({
+        container: {
+          flex: 1,
+        },
+      });
+      '''
+
+	'View':
+		'prefix': 'rnv'
+		'body': '<View style={styles.${1}}>${2}</View>$0'
+
+	'Text':
+    'prefix': 'rnt'
+    'body': """
+      <Text style={styles.${1}}>
+        ${2}
+      </Text>$0
+    """
+# ======= CSS
+'.source.css, .source.sass':
+  'display.flex':
+    'prefix': 'df'
+    'body': 'display: flex;'
+
+  'position.relative':
+    'prefix': 'pr'
+    'body': 'position: relative;'
+
+  'position.absolute':
+    'prefix': 'pa'
+    'body': 'position: absolute;'
+
+  'flex-flow.row-nowrap':
+    'prefix': 'ffrn'
+    'body': 'flex-flow: row nowrap;'
+
+  'flex-flow.row-wrap':
+    'prefix': 'ffrw'
+    'body': 'flex-flow: row wrap;'
+
+  'flex-flow.column-nowrap':
+    'prefix': 'ffcn'
+    'body': 'flex-flow: column nowrap;'
+
+  'flex-flow.column-wrap':
+    'prefix': 'ffcw'
+    'body': 'flex-flow: column wrap;'
+
+  'align-items.flex-start':
+    'prefix': 'aifs'
+    'body': 'align-items: flex-start;'
+
+  'align-items.flex-end':
+    'prefix': 'aife'
+    'body': 'align-items: flex-end;'
+
+  'align-items.center':
+    'prefix': 'aic'
+    'body': 'align-items: center;'
+
+  'align-items.baseline':
+    'prefix': 'aib'
+    'body': 'align-items: baseline;'
+
+  'align-items.stretch':
+    'prefix': 'ais'
+    'body': 'align-items: stretch;'
+
+  'justify-content.flex-start':
+    'prefix': 'jcfs'
+    'body': 'justify-content: flex-start;'
+
+  'justify-content.flex-end':
+    'prefix': 'jcfe'
+    'body': 'justify-content: flex-end;'
+
+  'justify-content.center':
+    'prefix': 'jcc'
+    'body': 'justify-content: center;'
+
+  'justify-content.space-around':
+    'prefix': 'jcsa'
+    'body': 'justify-content: space-around;'
+
+  'justify-content.space-between':
+    'prefix': 'jcsb'
+    'body': 'justify-content: space-between;'
+
+  'flex.1':
+    'prefix': 'f1'
+    'body': 'flex: 1;'

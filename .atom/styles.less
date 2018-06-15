@@ -1,0 +1,118 @@
+// Make tree view visible when pane is maximized
+.tree-view-resizer[data-autohide] {
+  z-index: 1000;
+}
+
+@panels-bg-color: #141516;
+@status-line-bg-color: #232425;
+@panels-top-label-margins: 20px 20px 0;
+
+atom-workspace {
+  // Style project name in tree view
+  .tree-view {
+    .project-root-header {
+      span.name {
+        background-color: rgba(34, 153, 221, .7);
+        transition: background-color .1s ease-in;
+        padding: 5px 15px;
+        font-family: Menlo;
+        text-transform: uppercase;
+        cursor: pointer;
+      }
+    }
+  }
+
+  // Adjust modal styles
+  .overlay,
+  atom-panel.modal {
+    &,
+    &::before {
+      border-radius: 0;
+      background-color: @panels-bg-color;
+      box-shadow: 0 0 70px rgba(0, 0, 0, .7);
+    }
+
+    .tree-view-dialog label:first-child {
+      margin: @panels-top-label-margins;
+    }
+  }
+
+  .overlay > * > *,
+  atom-panel.modal > * > * {
+    &:not(.list-group) {
+      margin: 20px;
+    }
+
+    &.info-message {
+      margin: @panels-top-label-margins;
+    }
+  }
+
+  .select-list ol.list-group li.two-lines .secondary-line,
+  .select-list ol.list-group li.two-lines .secondary-line {
+    color: inherit;
+
+    .character-match {
+      color: #fff;
+    }
+  }
+
+  // Adjust nuclide status bar styles
+  .footer .status-bar {
+    background-color: @status-line-bg-color;
+
+    .diagnostics-status-bar-highlight {
+      padding: 0 8px;
+      background-color: transparent;
+
+      .icon {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@white: #e6e6bd;
+
+atom-text-editor,
+atom-text-editor.editor {
+  color: @white;
+  font-weight: 500; // Use Hermit medium
+
+  .syntax--meta {
+    color: @white;
+  }
+
+  // Make line numbers less visible
+  .gutter {
+    color: #666;
+  }
+
+  // Make thin guides less visible
+  .indent-guide,
+  .wrap-guide {
+    box-shadow: inset 1px 0 0 #2a2a2a;
+  }
+
+  // Make selection visible
+  .selection .region {
+    background-color: rgba(255, 255, 255, .15);
+  }
+
+  // Redefine some syntax colors
+  .variable,
+  .syntax--variable {
+    color: #f0c674;
+  }
+}
+
+// Setup icons
+.icon[data-name$="package.json"]:before { font-family: "Devicons"; content: "\e681"; }
+.icon[data-name$=".js"]:before          { font-family: "Devicons"; content: "\e618"; }
+.icon[data-name$=".jsx"]:before         { font-family: "Devicons"; content: "\e618"; }
+.icon[data-name$=".spec.js"]:before     { font-family: "Octicons Regular"; content: "\f076"; }
+.icon[data-name$=".spec.jsx"]:before    { font-family: "Octicons Regular"; content: "\f076"; }
+.icon[data-name$=".css"]:before         { font-family: "Octicons Regular"; content: "\f0d1"; }
+.icon[data-name$=".scss"]:before        { font-family: "Octicons Regular"; content: "\f0d1"; }
+.icon[data-name$=".less"]:before        { font-family: "Octicons Regular"; content: "\f0d1"; }
